@@ -63,21 +63,20 @@ def trace_data_for_country(country):
     Prepare lists of datas for x and y axis
     '''
     # x is an empty list
-    x = ___
+    x = []
     # y is an empty list
-    y = ___
+    y = []
     # browse through the country dictionary to get datas.
     # - Keys contain datas for x axis (dates)
     # - Values contain datas for y axis (number of daily cases)
-    #for key, value in country.___():
     for key, value in country.items():
         # Filter inappropriate keys
-        if key != 'Province/State' and key !='___' and key != '___' and key != '___':
+        if key != 'Province/State' and key !='Country/Region' and key != 'Lat' and key != 'Long':
             # Add key to the x list
-            x.___(___)
+            x.append(key)
             # add value to the y list.
             # value must be an integer
-            y.___(int(___))
+            y.append(int(value))
     # return a tuple of lists x,y
     return x,y
 
@@ -98,7 +97,7 @@ if __name__ == '__main__':
         # for row in coutries:
         #    print(row['Province/State'], row['Country/Region'])
         chine = data_for_country(countries, 'Hubei', 'China')
-        france = data_for_country(countries, 'France', 'France')
+        france = data_for_country(countries, '', 'France')
         italie = data_for_country(countries, '', 'Italy')
         
         print(chine)
@@ -115,25 +114,26 @@ if __name__ == '__main__':
         x , y = trace_data_for_country(chine)
         plt.plot(x, y, label="Chine")
 
-        # Plot datas for France
-        ___
-        ___
+        x , y = trace_data_for_country(france)
+        plt.plot(x, y, label="France")
 
-        # Plot datas for Italy
-        ___
-        ___
+        x , y = trace_data_for_country(italie)
+        plt.plot(x, y, label="Italy")
+
+        plt.title("COVID-19")
+
 
         # Add title to graph : "Infectés"
-        ___
+
 
         # Add legend to graph
-        plt.___()
+        plt.legend()
         # Show graph
-        plt.___()
+        plt.show()
         # Save the figure as '19-covid-Confimed.png'
-        plt.___('9-covid-Confimed.png')
+        plt.savefig('19-covid-Confimed.png')
         # Close graph
-        plt.___()
+        plt.close()
         
     else:
         print(f'Téléchargement du fichier {file} impossible')

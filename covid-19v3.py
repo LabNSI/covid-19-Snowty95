@@ -79,6 +79,9 @@ if __name__ == '__main__':
         #    print(row['Province/State'], row['Country/Region'])
         france = data_for_country(countries, '', 'France')
         print(france)
-
+        italy = data_for_country(countries, '', 'Italy')
+        print(italy)
+        china = data_for_country(countries, 'Hubei', 'China')
+        print(china)
     else:
         print(f'Téléchargement du fichier {file} impossible')
