@@ -4,7 +4,7 @@
 # Author : MS
 # Date : 16/03/2020
 #
-# Replace the "___" by appropriate code
+# Replace the "Snowtyy" by appropriate code
 #
 ###########################################
 
